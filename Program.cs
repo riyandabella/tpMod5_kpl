@@ -1,16 +1,23 @@
-﻿public class HaloGeneric
+﻿public class DataGeneric<T>
 {
-    public void SapaUser<T>(T nama)
+    private T data;
+
+    public DataGeneric(T data)
     {
-        Console.WriteLine("Halo User " + nama);
+        this.data = data;
+    }
+
+    public void PrintData()
+    {
+        Console.WriteLine("Data yang tersimpan adalah : " + data);
     }
 }
 
 public class Utama
 {
-    public static void Main(String[] args)
+    static void Main()
     {
-        HaloGeneric sapa = new HaloGeneric();
-        sapa.SapaUser("Bella");
+        DataGeneric<String> data = new DataGeneric<string>("103022300001");
+        data.PrintData();
     }
 }
